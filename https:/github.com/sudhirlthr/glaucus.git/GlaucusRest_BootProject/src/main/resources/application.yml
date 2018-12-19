@@ -8,7 +8,7 @@ dev:
 prod: 
     db: 
         driverClass: com.mysql.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/glaucus
+        url: jdbc:mysql://localhost:3306/glaucus_db
         userName: administrator
         password: very_strong_password
         tableName: Number
