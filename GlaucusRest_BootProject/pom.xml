@@ -11,7 +11,7 @@
 	<groupId>com.sudhir</groupId>
 	<artifactId>GlaucusRest_BootProject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>GlaucusRest_BootProject</name>
 	<description>GaulcusProject with Spring Boot and REST</description>
 

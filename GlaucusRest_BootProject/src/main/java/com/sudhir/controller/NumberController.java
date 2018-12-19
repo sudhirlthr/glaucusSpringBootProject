@@ -13,20 +13,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.sudhir.repository.Number_Repository;
 
 /**
- * @author sudhir
+ * @author : Sudhir Kumar
+ * 
+ * front controller to accept request from localhost:8080/glaucus
+ * and then forward model in thymleaf for showing the latest number
  *
  */
 @Controller
-@RequestMapping("/glaucus")
+@RequestMapping("/glaucus")// requested URL
 public class NumberController {
 
+	// Inject dependency to update the number for each request
+	@Autowired
 	private Number_Repository number_Repository;
 	
-	@Autowired
-	public NumberController(Number_Repository number_Repository) {
-		this.number_Repository = number_Repository;
-	}
-	
+	// To get type of Request and forward the response accordingly
+	// and make this method as synchronized to serve each request as it comes and keep in pipeline for their execution
 	@RequestMapping(method=RequestMethod.GET)
 	public synchronized String home(Map<String, Integer> model) {
 		number_Repository.saveNumber();

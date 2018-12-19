@@ -15,21 +15,24 @@ import org.springframework.stereotype.Repository;
 import com.sudhir.dao.DataSourceFactory;
 import com.sudhir.pojo.Number_Pojo;
 /**
- * @author sudhir
+ * @author : Sudhir Kumar
+ * 
+ * A repository class to get the Jdbctemplate object 
+ * and perform CRUD operations 
  *
  */
 @Repository
 public class Number_Repository {
+	
+	// Inject JdbcTemplate object Autowired DI
+	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
+	// Inject dataSourceFactory object Autowired DI to get Table Name dynamically
 	@Autowired
 	DataSourceFactory dataSourceFactory;
 	
-	@Autowired
-	public Number_Repository(JdbcTemplate jdbcTemplate) {
-		this.jdbcTemplate = jdbcTemplate;
-	}
-	
+	// method to get latest updated number from DB
 	public synchronized Integer getNumber() {
 		Number_Pojo numberPojo = jdbcTemplate.query("select id from "+dataSourceFactory.getTableName()+"", new ResultSetExtractor<Number_Pojo>() {
 
@@ -44,6 +47,8 @@ public class Number_Repository {
 		return numberPojo.getId();
 	}
 	
+	
+	// method to update / increment the number for each request
 	public void saveNumber() {
 		/*if(jdbcTemplate.update("update "+dataSourceFactory.getTableName()+" set id =id+1;")>0)
 			System.out.println("Number updated.");

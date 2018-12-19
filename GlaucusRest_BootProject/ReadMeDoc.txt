@@ -38,7 +38,7 @@
 3. To run JAR file :
 	Step 1: Execute following command in the terminal
 			java -jar path/of/Jar/file, then press enter
-	Step 2: Point your browser to "localhost:8080/", it will show current number, whenever user will request for localhost:8080, number will get increase.
+	Step 2: Point your browser to "localhost:8080/glaucus", it will show current number, whenever user will request for localhost:8080, number will get increase.
 	
 	
 4. To run WAR :

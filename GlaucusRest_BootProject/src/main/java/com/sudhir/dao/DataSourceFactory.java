@@ -7,6 +7,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
+/*
+ * author: Sudhir Kumar
+ * 
+ * Class to get the DataSource object reference from DriverManagerSource 
+ * and provide this reference to JdbcTemplate as constructor parameter 
+ * after setting Database name , username, password and URL. 
+ * 
+ * */
+
 @Configuration
 @ConfigurationProperties(prefix="prod.db")
 public class DataSourceFactory {
@@ -46,6 +55,7 @@ public class DataSourceFactory {
 				+ password + "]";
 	}*/
 	
+	// making output object as Bean and handing over to container for future use in JdbcTemplate
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();

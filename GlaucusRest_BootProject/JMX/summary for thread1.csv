@@ -1,0 +1,3 @@
+Label,# Samples,Average,Min,Max,Std. Dev.,Error %,Throughput,KB/sec,Avg. Bytes
+glaucus,1000,48474,219,114273,34672.53,0.00%,8.6,3.91,466.0
+TOTAL,1000,48474,219,114273,34672.53,0.00%,8.6,3.91,466.0

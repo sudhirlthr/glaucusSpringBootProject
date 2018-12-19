@@ -5,10 +5,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-
+/*
+ * author: Sudhir Kumar
+ * 
+ * Main class to start the application
+ * */
 @SpringBootApplication
 @EnableConfigurationProperties
-public class JdbcTemplatePocWithYamlApplication extends SpringBootServletInitializer{
+public class JdbcTemplatePocWithYamlApplication extends SpringBootServletInitializer{// extend SpringBootServletInitializer class to support WAR import through Maven
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
