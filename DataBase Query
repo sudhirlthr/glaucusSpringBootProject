@@ -1,0 +1,4 @@
+create database glaucus_db;
+use glaucus_db;
+create table Number(id integer);
+insert into Number values(0);
