@@ -17,7 +17,7 @@ import com.sudhir.repository.Number_Repository;
  *
  */
 @Controller
-@RequestMapping("/")
+@RequestMapping("/glaucus")
 public class NumberController {
 
 	private Number_Repository number_Repository;
@@ -28,7 +28,7 @@ public class NumberController {
 	}
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public String home(Map<String, Integer> model) {
+	public synchronized String home(Map<String, Integer> model) {
 		number_Repository.saveNumber();
 		Integer number = number_Repository.getNumber();
 		model.put("number", number);

@@ -30,7 +30,7 @@ public class Number_Repository {
 		this.jdbcTemplate = jdbcTemplate;
 	}
 	
-	public Integer getNumber() {
+	public synchronized Integer getNumber() {
 		Number_Pojo numberPojo = jdbcTemplate.query("select id from "+dataSourceFactory.getTableName()+"", new ResultSetExtractor<Number_Pojo>() {
 
 			@Override
@@ -45,9 +45,10 @@ public class Number_Repository {
 	}
 	
 	public void saveNumber() {
-		if(jdbcTemplate.update("update "+dataSourceFactory.getTableName()+" set id =id+1;")>0)
+		/*if(jdbcTemplate.update("update "+dataSourceFactory.getTableName()+" set id =id+1;")>0)
 			System.out.println("Number updated.");
 		else
-			System.out.println("Some error, Number did not updated.");
+			System.out.println("Some error, Number did not updated.");*/
+		jdbcTemplate.update("update "+dataSourceFactory.getTableName()+" set id =id+1;");
 	}
 }
