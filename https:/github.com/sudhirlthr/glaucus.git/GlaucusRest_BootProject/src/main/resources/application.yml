@@ -1,0 +1,14 @@
+dev: 
+    db: 
+        driverClass: org.postgresql.Driver
+        url: jdbc:postgresql://localhost:5432/springdb
+        userName: postgres
+        password: 123456
+        tableName: number
+prod: 
+    db: 
+        driverClass: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/glaucus
+        userName: administrator
+        password: very_strong_password
+        tableName: Number
